@@ -1,6 +1,6 @@
 {
-    "version": "0.0.1-beta.1",
-    "name": "ymaps3-resizer",
+    "version": "0.0.0",
+    "name": "@yandex/ymaps3-resizer",
     "description": "Yandex Maps JS API 3.0 example ymaps3-resizer",
     "types": "./dist/types/index.d.ts",
     "main": "./dist/esm/index.mjs",

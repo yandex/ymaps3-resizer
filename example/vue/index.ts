@@ -7,16 +7,15 @@ async function main() {
     const [ymaps3Vue] = await Promise.all([ymaps3.import('@yandex/ymaps3-vuefy'), ymaps3.ready]);
     const vuefy = ymaps3Vue.vuefy.bindTo(Vue);
 
-    const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapControls} = vuefy.module(ymaps3);
+    const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer} = vuefy.module(ymaps3);
 
-    const {YMapResizer} = vuefy.module(await ymaps3.import('ymaps3-resizer'));
+    const {YMapResizer} = vuefy.module(await ymaps3.import('@yandex/ymaps3-resizer'));
 
     const app = Vue.createApp({
         components: {
             YMap,
             YMapDefaultSchemeLayer,
             YMapDefaultFeaturesLayer,
-            YMapControls,
             YMapResizer
         },
         setup() {

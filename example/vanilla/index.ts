@@ -4,9 +4,9 @@ window.map = null;
 main();
 async function main() {
     await ymaps3.ready;
-    const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapControls} = ymaps3;
+    const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer} = ymaps3;
 
-    const {YMapResizer} = await ymaps3.import('ymaps3-resizer');
+    const {YMapResizer} = await ymaps3.import('@yandex/ymaps3-resizer');
 
     map = new YMap(document.getElementById('app'), {location: LOCATION});
 

@@ -1,7 +1,7 @@
-import type {YMapLocationRequest, LngLatBounds} from '@yandex/ymaps3-types';
+import type {YMapLocationRequest} from '@yandex/ymaps3-types';
 
 ymaps3.import.loaders.unshift(async (pkg) => {
-    if (!pkg.startsWith('ymaps3-resizer')) {
+    if (!pkg.startsWith('@yandex/ymaps3-resizer')) {
         return;
     }
 
@@ -11,7 +11,7 @@ ymaps3.import.loaders.unshift(async (pkg) => {
         await ymaps3.import.script(`https://unpkg.com/${pkg}/dist/index.js`);
     }
 
-    return window['ymaps3-resizer'];
+    return window['@yandex/ymaps3-resizer'];
 });
 
 export const LOCATION: YMapLocationRequest = {

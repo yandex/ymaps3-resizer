@@ -9,7 +9,7 @@ async function main() {
 
     const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer} = reactify.module(ymaps3);
 
-    const {YMapResizer} = reactify.module(await ymaps3.import('ymaps3-resizer'));
+    const {YMapResizer} = reactify.module(await ymaps3.import('@yandex/ymaps3-resizer'));
 
     ReactDOM.render(
         <React.StrictMode>
@@ -23,7 +23,7 @@ async function main() {
             <YMap location={LOCATION} ref={(x) => (map = x)}>
                 <YMapDefaultSchemeLayer />
                 <YMapDefaultFeaturesLayer />
-                <YMapResizer minWidth={400} maxWidth={1000} minHeight={400} maxHeight={600}/>
+                <YMapResizer minWidth={400} maxWidth={1000} minHeight={400} maxHeight={600} />
             </YMap>
         );
     }
