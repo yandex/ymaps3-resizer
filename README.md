@@ -15,7 +15,7 @@ The package is located in the `dist` folder:
 - `dist/esm` es6 modules for direct connection in your project
 - `dist/index.js` Yandex JS Module
 
-Recommended use `YMapButtonExample` as usual npm package:
+Recommended use `YMapResizer` as usual npm package:
 
 ```sh
 npm i ymaps3-resizer
@@ -23,17 +23,35 @@ npm i ymaps3-resizer
 
 and dynamic import
 
+
 ```js
-await ymaps3.ready;
+import 'ymaps3-minimap/dist/esm/index.css';
+import {YMapResizer} from 'ymaps3-resizer'
 
-// ...
+main();
+async function main() {
+    await ymaps3.ready;
+    const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer} = ymaps3;
 
-const {YMapButtonExample} = await import('ymaps3-resizer');
+    map = new YMap(document.getElementById('app'), {location: LOCATION});
 
-// ...
+    map.addChild(new YMapDefaultSchemeLayer({}));
+    map.addChild(new YMapDefaultFeaturesLayer({}));
 
-map.addChild(new YMapButtonExample(props));
+    map.addChild(new YMapResizer({minWidth: 400, maxWidth: 1000, minHeight: 400, maxHeight: 600}));
+}
 ```
+
+### YMapResizerProps
+
+| Property         | Type                            | Default   | Description                                |
+|:-----------------|:--------------------------------|:----------|:-------------------------------------------|
+| `direction`      | `'both' \| 'horizontal' \| 'vertical'` | `'both'`  | Resize direction.                   |
+| `minWidth`       | `number`                        | -         | Resize minimum width limit in 'px'.        |
+| `maxWidth`       | `number`                        | -         | Resize maximum width limit in 'px'.        |
+| `minHeight`      | `number`                        | -         | Resize minimum height limit in 'px'.       |
+| `maxHeight`      | `number`                        | -         | Resize maximum height limit in 'px'.       |
+| `showOnlyOnHover`| `boolean`                       | false     | Shows resize controls only on hover.       |
 
 ### Usage without npm
 
@@ -42,7 +60,7 @@ You can use CDN with module loading handler in JS API on your page.
 Just use `ymaps3.import`:
 
 ```js
-const pkg = await ymaps3.import('ymaps3-resizer');
+const {YMapResizer} = await ymaps3.import('ymaps3-resizer');
 ```
 
 By default `ymaps3.import` can load self modules.

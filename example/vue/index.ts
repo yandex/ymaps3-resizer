@@ -9,7 +9,7 @@ async function main() {
 
     const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapControls} = vuefy.module(ymaps3);
 
-    const {YMapButtonExample} = vuefy.module(await ymaps3.import('ymaps3-resizer'));
+    const {YMapResizer} = vuefy.module(await ymaps3.import('ymaps3-resizer'));
 
     const app = Vue.createApp({
         components: {
@@ -17,7 +17,7 @@ async function main() {
             YMapDefaultSchemeLayer,
             YMapDefaultFeaturesLayer,
             YMapControls,
-            YMapButtonExample
+            YMapResizer
         },
         setup() {
             const refMap = (ref) => {
@@ -30,9 +30,7 @@ async function main() {
             <YMap :location="LOCATION" :ref="refMap">
                 <YMapDefaultSchemeLayer />
                 <YMapDefaultFeaturesLayer />
-                <YMapControls position="right">
-                    <YMapButtonExample text="My button" :onClick="onClick" />
-                </YMapControls>
+                <YMapResizer :minWidth="400" :maxWidth="1000" :minHeight="400" :maxHeight="600" />
             </YMap>`
     });
     app.mount('#app');

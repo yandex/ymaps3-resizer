@@ -66,26 +66,6 @@ exports[`YMap smoke test should make map 1`] = `
       "attributes": {
         "class": "ymaps3x0--controls ymaps3x0--controls_bottom ymaps3x0--controls_center ymaps3x0--controls_horizontal",
       },
-      "children": [
-        {
-          "attributes": {
-            "class": "ymaps3x0--control ymaps3x0--control__background",
-          },
-          "children": [
-            {
-              "attributes": {
-                "class": "ymaps3x0--button ymaps3x0--control-button",
-                "type": "button",
-              },
-              "children": [
-                "Some text",
-              ],
-              "nodeName": "button",
-            },
-          ],
-          "nodeName": "ymaps",
-        },
-      ],
       "nodeName": "ymaps",
     },
     {
@@ -135,6 +115,75 @@ exports[`YMap smoke test should make map 1`] = `
         },
       ],
       "nodeName": "ymaps",
+    },
+    {
+      "attributes": {
+        "class": "ymaps3x0-resize-control vertical",
+        "style": "cursor: ns-resize; opacity: 1;",
+      },
+      "children": [
+        {
+          "attributes": {
+            "class": "ymaps3x0-resize-arrow vertical bottom",
+            "style": "opacity: 0;",
+          },
+          "nodeName": "div",
+        },
+        {
+          "attributes": {
+            "class": "ymaps3x0-resize-arrow vertical top",
+            "style": "opacity: 0;",
+          },
+          "nodeName": "div",
+        },
+      ],
+      "nodeName": "div",
+    },
+    {
+      "attributes": {
+        "class": "ymaps3x0-resize-control horizontal",
+        "style": "cursor: ew-resize; opacity: 1;",
+      },
+      "children": [
+        {
+          "attributes": {
+            "class": "ymaps3x0-resize-arrow horizontal right",
+            "style": "opacity: 0;",
+          },
+          "nodeName": "div",
+        },
+        {
+          "attributes": {
+            "class": "ymaps3x0-resize-arrow horizontal left",
+            "style": "opacity: 0;",
+          },
+          "nodeName": "div",
+        },
+      ],
+      "nodeName": "div",
+    },
+    {
+      "attributes": {
+        "class": "ymaps3x0-resize-control both",
+        "style": "cursor: nwse-resize; opacity: 1;",
+      },
+      "children": [
+        {
+          "attributes": {
+            "class": "ymaps3x0-resize-arrow both nw",
+            "style": "opacity: 0;",
+          },
+          "nodeName": "div",
+        },
+        {
+          "attributes": {
+            "class": "ymaps3x0-resize-arrow both se",
+            "style": "opacity: 0;",
+          },
+          "nodeName": "div",
+        },
+      ],
+      "nodeName": "div",
     },
   ],
   "nodeName": "ymaps",

@@ -7,11 +7,9 @@ async function main() {
     const [ymaps3React] = await Promise.all([ymaps3.import('@yandex/ymaps3-reactify'), ymaps3.ready]);
     const reactify = ymaps3React.reactify.bindTo(React, ReactDOM);
 
-    const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapControls} = reactify.module(ymaps3);
+    const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer} = reactify.module(ymaps3);
 
-    const {useState, useCallback} = React;
-
-    const {YMapButtonExample} = reactify.module(await ymaps3.import('ymaps3-resizer'));
+    const {YMapResizer} = reactify.module(await ymaps3.import('ymaps3-resizer'));
 
     ReactDOM.render(
         <React.StrictMode>
@@ -21,16 +19,11 @@ async function main() {
     );
 
     function App() {
-        const [location, setLocation] = useState(LOCATION);
-        const onClick = useCallback(() => alert('Click!'), []);
-
         return (
-            <YMap location={location} ref={(x) => (map = x)}>
+            <YMap location={LOCATION} ref={(x) => (map = x)}>
                 <YMapDefaultSchemeLayer />
                 <YMapDefaultFeaturesLayer />
-                <YMapControls position="right">
-                    <YMapButtonExample text={'My button'} onClick={onClick} />
-                </YMapControls>
+                <YMapResizer minWidth={400} maxWidth={1000} minHeight={400} maxHeight={600}/>
             </YMap>
         );
     }
