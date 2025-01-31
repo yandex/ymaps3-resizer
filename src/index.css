@@ -8,15 +8,8 @@
     border: inherit;
 }
 
-.ymaps3x0-resize.active.horizontal {
-    border-right: 1px solid var(--ymaps3x0-resize-control-color);
-}
-.ymaps3x0-resize.active.vertical {
-    border-bottom: 1px solid var(--ymaps3x0-resize-control-color);
-}
-.ymaps3x0-resize.active.both {
-    border-right: 1px solid var(--ymaps3x0-resize-control-color);
-    border-bottom: 1px solid var(--ymaps3x0-resize-control-color);
+.ymaps3x0-resize.active {
+    border: 1px solid var(--ymaps3x0-resize-control-color);
 }
 
 .ymaps3x0-resize-control {
