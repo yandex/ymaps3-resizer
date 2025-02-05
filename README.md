@@ -4,8 +4,8 @@
 
 Yandex JS API package
 
-[![npm version](https://badge.fury.io/js/%40yandex%2Fymaps3-resizer.svg)](https://badge.fury.io/js/%40yandex%2Fymaps3-resizer)
-[![npm](https://img.shields.io/npm/dm/%40yandex%2Fymaps3-resizer.svg)](https://www.npmjs.com/package/%40yandex%2Fymaps3-resizer)
+[![npm version](https://badge.fury.io/js/@yandex%2Fymaps3-resizer.svg)](https://badge.fury.io/js/@yandex%2Fymaps3-resizer)
+[![npm](https://img.shields.io/npm/dm/%40yandex%2Fymaps3-resizer)](https://www.npmjs.com/package/%40yandex%2Fymaps3-resizer)
 
 ## How use
 
@@ -18,7 +18,7 @@ The package is located in the `dist` folder:
 Recommended use `YMapResizer` as usual npm package:
 
 ```sh
-npm i @yandex/ymaps3-resizer
+npm install @yandex/ymaps3-resizer
 ```
 
 and dynamic import
