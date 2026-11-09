@@ -17,3 +17,7 @@ tests
 .DS_Store
 example
 tsconfig.json
+.env.*
+*.tgz
+webpack.config.js
+tsconfig.build.json
